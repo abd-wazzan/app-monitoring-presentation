@@ -1,18 +1,15 @@
 ---
-# try also 'default' to start simple
+# Modern theme for technical presentations
 theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
-# some information about your slides (markdown enabled)
-title: Welcome to Slidev
+# Hero-style layout with eagle integration
+layout: default
+# Presentation information
+title: Application Monitoring - Beyond the Usual
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  ## Application Monitoring: Beyond the Usual
+  Syrian Developers Event 2025
 
-  Learn more at [Sli.dev](https://sli.dev)
-# apply UnoCSS classes to the current slide
-class: text-center
+  Modern monitoring strategies for developers
 # https://sli.dev/features/drawing
 drawings:
   persist: false
@@ -22,614 +19,634 @@ transition: slide-left
 mdc: true
 ---
 
-# Welcome to Slidev
+<div class="h-full flex items-center justify-center">
 
-Presentation slides for developers
+<div class="text-center space-y-12">
 
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
+<div class="space-y-4">
+<h1 class="text-5xl font-bold text-gray-800">Application Monitoring</h1>
+<h2 class="text-3xl font-semibold text-gray-600">Beyond Basic Health Checks</h2>
 </div>
 
-<div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
-  </a>
+<div class="flex justify-center">
+<img src="/eagle.png" class="w-80 h-60 object-cover rounded-2xl shadow-2xl" alt="Eagle - Symbol of Vision and Perspective" />
+</div>
+
+<div class="space-y-3">
+<div class="text-xl text-green-700 font-semibold">
+🇸🇾 Syrian Developers Event • October 2025
+</div>
+
+<div class="text-lg text-gray-600 font-medium space-y-1">
+<div>Presented by <span class="text-gray-800 font-semibold">Abdulrahman Wazzan</span></div>
+<div class="flex items-center justify-center gap-1 text-blue-500 text-sm">
+<carbon:logo-linkedin class="w-4 h-4" />
+<span>@abdulrahman-wazzan</span>
+</div>
+</div>
+</div>
+
+</div>
+
 </div>
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+Welcome to our deep dive into modern application monitoring. Today we'll explore monitoring strategies that go far beyond simple uptime checks and help you build more reliable, observable systems.
 -->
 
 ---
 transition: fade-out
 ---
 
-# What is Slidev?
+# Why Application Monitoring?
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+Modern applications need more than basic uptime checks
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-<br>
-<br>
+<div v-click class="mt-8">
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+## The Reality Check 📊
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
+- **Users expect** 99.9%+ uptime and sub-second response times
+- **Traditional monitoring** only tells you *when* something breaks
+- **Modern monitoring** tells you *why* and *where* it breaks
 
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
+</div>
+
+<div v-click class="mt-8">
+
+## The Cost of Downtime 💸
+
+- **1 minute** of downtime = Lost revenue, frustrated users
+- **5 minutes** = Social media complaints, support tickets
+- **1 hour** = Reputation damage, customer churn
+
+</div>
+
+<div v-click class="mt-6">
+
+**Bottom line:** Traditional monitoring ≠ modern needs
+</div>
 
 <!--
-Here is another comment.
+Modern applications are complex distributed systems serving global users. A simple "ping" check doesn't tell you if your checkout flow is broken in Asia, or if your API is slow for mobile users. We need monitoring that matches the complexity of our systems.
 -->
 
 ---
 transition: slide-up
-level: 2
 ---
 
-# Navigation
+# Types of Monitoring: Overview
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
+Understanding the monitoring landscape
 
-## Keyboard Shortcuts
+<div class="grid grid-cols-3 gap-8 mt-8">
 
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
+<div v-click="1" class="text-center">
 
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+## 🖥️ Infrastructure
+**Servers, DBs, Networks**
+
+- CPU, Memory, Disk
+- Network latency
+- Database performance
+- Container metrics
+
+</div>
+
+<div v-click="2" class="text-center">
+
+## 👥 Real User Monitoring
+**"What do users experience?"**
+
+- Actual user sessions
+- Real performance data
+- Geographic insights
+- Device-specific issues
+
+</div>
+
+<div v-click="3" class="text-center">
+
+## 🤖 Synthetic Monitoring
+**"What could users experience?"**
+
+- Simulated user journeys
+- Proactive issue detection
+- Global testing
+- 24/7 validation
+
+</div>
+
+</div>
+
+<div v-click="4" class="mt-8 text-center text-lg">
+
+**Today's focus:** Going beyond infrastructure to user-centric monitoring
+
+</div>
+
+<!--
+Infrastructure monitoring is table stakes - everyone does CPU and memory monitoring. Real User Monitoring shows you what's actually happening to your users. But Synthetic Monitoring is where the magic happens - it's proactive, it catches issues before users do, and it can test from anywhere in the world.
+-->
 
 ---
 layout: two-cols
 layoutClass: gap-16
 ---
 
-# Table of contents
+# What Is Synthetic Monitoring?
 
-You can use the `Toc` component to generate a table of contents for your slides:
+Proactive monitoring that simulates real user behavior
 
-```html
-<Toc minDepth="1" maxDepth="1" />
-```
+<div v-click="1">
 
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
+## The Concept 🎭
+
+**Automated scripts** that simulate real user flows:
+- Login → Browse → Purchase
+- Search → Filter → View Details
+- API calls → Data processing
+- Mobile app interactions
+
+</div>
+
+<div v-click="2" class="mt-6">
+
+## Key Benefits ✨
+
+- **Proactive detection** before users are impacted
+- **Global testing** from multiple regions
+- **24/7 validation** of critical user journeys
+- **Performance benchmarking** across locations
+
+</div>
 
 ::right::
 
-<Toc text-sm minDepth="1" maxDepth="2" />
+<div v-click="3">
 
----
-layout: image-right
-image: https://cover.sli.dev
----
+```javascript
+// Example: E-commerce checkout monitoring
+const syntheticTest = async () => {
+  // 1. Navigate to product page
+  await page.goto('/products/laptop');
 
-# Code
+  // 2. Add to cart
+  await page.click('[data-testid="add-to-cart"]');
 
-Use code snippets and get the highlighting directly, and even types hover!
+  // 3. Proceed to checkout
+  await page.click('[data-testid="checkout"]');
 
-```ts [filename-example.ts] {all|4|6|6-7|9|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-import { computed, ref } from 'vue'
+  // 4. Fill payment details
+  await page.fill('#email', 'test@example.com');
+  await page.fill('#card', '4242424242424242');
 
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
+  // 5. Complete purchase
+  await page.click('[data-testid="complete-order"]');
 
-doubled.value = 2
+  // 6. Verify success
+  await expect(page.locator('.success')).toBeVisible();
+};
 ```
 
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="342" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
----
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
+<div class="mt-4 text-sm opacity-75">
+Real synthetic monitoring script using Playwright
 </div>
-<div>
 
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
 </div>
 
 <!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
+Synthetic monitoring is like having a robot customer that tests your application 24/7 from around the world. It catches issues before real users encounter them. The example shows a real e-commerce checkout flow - if this fails in production, you know immediately, not when customers start complaining.
 -->
 
 ---
-class: px-20
 ---
 
-# Themes
+# Key Features of Synthetic Monitoring
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+What makes synthetic monitoring powerful for modern applications
 
-<div grid="~ cols-2 gap-2" m="t-2">
+<div class="grid grid-cols-2 gap-8 mt-8">
 
-```yaml
----
-theme: default
----
-```
+<div v-click="1">
 
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
+## 🌍 Multi-Location Testing
+- Test from **multiple regions** simultaneously
+- Catch **geo-specific issues** (CDN problems, regional outages)
+- Validate **global performance** consistency
+- Monitor **third-party dependencies** across regions
 
 </div>
 
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
+<div v-click="2">
 
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
+## 🔄 Complex User Journeys
+- **Multi-step workflows** (signup → onboarding → purchase)
+- **API dependency chains** (auth → data → processing)
+- **Mobile app flows** (login → navigation → actions)
+- **Cross-browser testing** (Chrome, Safari, Firefox)
 
 </div>
 
-<br>
+<div v-click="3">
 
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn more](https://sli.dev/guide/animations#click-animation)
+## 📊 Advanced Analytics
+- **Performance trends** over time
+- **Failure pattern analysis** (when, where, why)
+- **SLA compliance** tracking
+- **Competitive benchmarking**
 
 </div>
 
----
+<div v-click="4">
 
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
-</div>
-```
-
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn more](https://sli.dev/guide/animations.html#motion)
+## 🔗 Deep Integrations
+- **CI/CD pipelines** (block deployments on failures)
+- **Incident management** (PagerDuty, Slack alerts)
+- **APM tools** (correlate with backend metrics)
+- **Custom webhooks** for any workflow
 
 </div>
 
----
+</div>
 
-# LaTeX
+<div v-click="5" class="mt-8 text-center">
 
-LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
+**Result:** Catch issues before they impact users, anywhere in the world
 
 </div>
 
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
+<!--
+These features work together to create a comprehensive monitoring strategy. Multi-location testing catches regional issues that single-point monitoring misses. Complex journey testing validates entire user workflows, not just individual endpoints. The analytics help you understand patterns and trends, while integrations ensure the right people know about issues immediately.
+-->
 
 ---
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
+layout: two-cols
+layoutClass: gap-16
 ---
 
-# Draggable Elements
+# Why Synthetic > Basic Health Checks?
 
-Double-click on the draggable elements to edit their positions.
+Moving beyond simple "ping" monitoring
 
-<br>
+<div v-click="1">
 
-###### Directive Usage
+## ❌ Basic Health Checks
+```bash
+# Simple ping test
+curl -f https://api.example.com/health
+# Returns: 200 OK ✅
 
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
+# But what about...
+# - User authentication flow?
+# - Database connectivity?
+# - Third-party integrations?
+# - Regional performance?
 ```
 
-<br>
+**Problem:** Server is up ≠ Application works
 
-###### Component Usage
+</div>
 
-```md
-<v-drag text-3xl>
-  <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
+::right::
+
+<div v-click="2">
+
+## ✅ Synthetic Monitoring
+```javascript
+// Real user journey test
+const fullUserFlow = async () => {
+  // 1. Test authentication
+  await login('user@example.com', 'password');
+
+  // 2. Test core functionality
+  await searchProducts('laptop');
+  await addToCart('macbook-pro');
+
+  // 3. Test payment flow
+  await proceedToCheckout();
+  await enterPaymentDetails();
+
+  // 4. Verify completion
+  await confirmOrder();
+
+  // All steps must pass ✅
+};
 ```
 
-<v-drag pos="663,206,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
+**Result:** End-to-end validation of user experience
 
-<img v-drag="'square'" src="https://sli.dev/logo.png">
+</div>
 
-###### Draggable Arrow
+<div v-click="3" class="col-span-2 mt-8 text-center">
 
-```md
-<v-drag-arrow two-way />
-```
+**Synthetic monitoring catches issues that health checks miss**
 
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
+</div>
+
+<!--
+This is the key difference - health checks tell you if your server responds, but synthetic monitoring tells you if your users can actually accomplish their goals. A 200 OK response doesn't mean your checkout flow works, your database is accessible, or your third-party payment processor is functioning.
+-->
 
 ---
-src: ./pages/imported-slides.md
-hide: false
+layout: two-cols
+layoutClass: gap-16
 ---
 
+# Live Demo: Global Monitoring 🎬
+
+Real-time synthetic monitoring dashboard
+
+<div v-click="1">
+
+## The Scenario
+- **E-commerce platform** serving global users
+- **5 regions** monitored continuously
+- **Critical flows** tested every 2 minutes
+- **Real-time alerts** for performance issues
+
+</div>
+
+<div v-click="2" class="mt-6">
+
+## What You're Seeing
+- **Green dots:** Healthy regions
+- **Red dots:** Performance issues detected
+- **Latency numbers:** Real response times
+- **Test results:** Recent synthetic test outcomes
+
+</div>
+
+<div v-click="3" class="mt-6">
+
+**Notice:** Asia Pacific showing degraded performance
+This would trigger alerts before users are impacted!
+
+</div>
+
+::right::
+
+<div v-click="4">
+
+<MonitoringDashboard />
+
+</div>
+
+<!--
+This live dashboard shows what real synthetic monitoring looks like. Notice how Asia Pacific is showing degraded performance - in a real scenario, this would trigger immediate alerts to the engineering team. The dashboard updates in real-time, showing the kind of visibility you get with proper monitoring.
+-->
+
+---
+layout: two-cols
+layoutClass: gap-16
 ---
 
-# Monaco Editor
+# Introducing Product Analytics
 
-Slidev provides built-in Monaco Editor support.
+Understanding user behavior beyond technical metrics
 
-Add `{monaco}` to the code block to turn it into an editor:
+<div v-click="1">
 
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
+## 📊 What is Product Analytics?
 
-const arr = ref(emptyArray(10))
+**Track user behavior** to understand:
+- Which features users actually use
+- Where users drop off in funnels
+- What keeps users engaged
+- How different user segments behave
+
+</div>
+
+<div v-click="2">
+
+## 🎯 Key Metrics
+
+- **Events:** Button clicks, page views, feature usage
+- **Funnels:** Step-by-step user journey analysis
+- **Cohorts:** User groups based on behavior/attributes
+- **Retention:** How often users return
+- **Churn:** When and why users leave
+
+</div>
+
+::right::
+
+<div v-click="3">
+
+```javascript
+// Example: Tracking user events
+mixpanel.track('Product Viewed', {
+  'Product Name': 'MacBook Pro',
+  'Category': 'Laptops',
+  'Price': 2499,
+  'User Type': 'Premium'
+});
+
+mixpanel.track('Add to Cart', {
+  'Product ID': 'mbp-16-512',
+  'Quantity': 1,
+  'Cart Value': 2499
+});
+
+mixpanel.track('Checkout Started', {
+  'Cart Items': 1,
+  'Total Value': 2499,
+  'Payment Method': 'Credit Card'
+});
 ```
 
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
+<div class="mt-4 text-sm opacity-75">
+Real event tracking implementation
+</div>
 
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
+</div>
 
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
+<div v-click="4" class="col-span-2 mt-8 text-center">
+
+**Result:** Data-driven decisions instead of guesswork
+
+</div>
+
+<!--
+Product analytics complements technical monitoring by focusing on user behavior. While synthetic monitoring tells you if your checkout works, product analytics tells you how many users actually complete checkout, where they drop off, and what factors influence conversion rates.
+-->
+
+---
+---
+
+# Real Use Cases: Product Analytics in Action
+
+How data-driven insights improve user experience
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+
+<div v-click="1">
+
+## 🔍 Funnel Analysis
+**Scenario:** E-commerce checkout optimization
+
 ```
+Homepage → Product → Cart → Checkout → Payment
+   100%      85%     70%      45%       38%
+```
+
+**Insight:** 25% drop-off from Cart to Checkout
+**Action:** Simplified checkout form
+**Result:** Improved conversion by 15%
+
+</div>
+
+<div v-click="2">
+
+## 👥 Cohort Analysis
+**Scenario:** SaaS user retention
+
+- **Week 1 users:** 100% active
+- **Week 2 users:** 65% still active
+- **Week 4 users:** 40% still active
+- **Week 8 users:** 25% still active
+
+**Insight:** Major drop-off after week 2
+**Action:** Improved onboarding flow
+**Result:** Week 4 retention increased to 60%
+
+</div>
+
+<div v-click="3">
+
+## 🎯 Feature Usage
+**Scenario:** Mobile app optimization
+
+- **Search:** Used by 95% of users
+- **Filters:** Used by 30% of users
+- **Favorites:** Used by 15% of users
+- **Share:** Used by 5% of users
+
+**Insight:** Core features vs. nice-to-have
+**Action:** Prioritized search performance
+**Result:** 20% faster app experience
+
+</div>
+
+<div v-click="4">
+
+## 🌍 Segmentation
+**Scenario:** Global app performance
+
+- **US users:** 2.1s avg load time
+- **EU users:** 2.8s avg load time
+- **APAC users:** 4.2s avg load time
+
+**Insight:** Regional performance gaps
+**Action:** Added APAC CDN nodes
+**Result:** APAC load time reduced to 2.3s
+
+</div>
+
+</div>
+
+<!--
+These are real scenarios that product analytics helps solve. The key is combining technical monitoring (is it working?) with behavioral analytics (are users successful?). This gives you a complete picture of your application's health from both technical and user perspectives.
+-->
 
 ---
 layout: center
 class: text-center
 ---
 
-# Learn More
+# Key Takeaways 🎯
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+Modern monitoring for modern applications
 
-<PoweredBySlidev mt-10 />
+<div v-click="1" class="mt-8">
+
+## 🚀 Go Beyond Basic Monitoring
+- **Health checks** tell you if servers are up
+- **Synthetic monitoring** tells you if users can succeed
+- **Product analytics** tells you if users actually do succeed
+
+</div>
+
+<div v-click="2" class="mt-8">
+
+## 🌍 Think Global, Monitor Local
+- Test from your users' locations
+- Catch regional issues before impact
+- Validate performance across geographies
+
+</div>
+
+<div v-click="3" class="mt-8">
+
+## 📊 Combine Proactive + Reactive
+- **Proactive:** Synthetic monitoring catches issues early
+- **Reactive:** User analytics shows real behavior patterns
+- **Together:** Complete visibility into application health
+
+</div>
+
+<div v-click="4" class="mt-8">
+
+## 🛠️ Modern Tools = Smarter Engineering
+Stop guessing, start measuring. Your users (and your sleep) will thank you.
+
+</div>
+
+<!--
+The key message is that modern applications require modern monitoring approaches. Basic uptime monitoring isn't enough when you're serving global users with complex applications. The combination of synthetic monitoring and product analytics gives you both proactive issue detection and deep insights into user behavior.
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# Questions & Discussion 🤔
+
+Let's dive deeper into modern monitoring
+
+<div class="mt-12">
+
+## 🛠️ Tools & Resources
+
+<div class="grid grid-cols-2 gap-8 mt-8 text-left">
+
+<div>
+
+**Synthetic Monitoring:**
+- Playwright (open source)
+- Puppeteer (Google)
+- DataDog Synthetics
+- New Relic Synthetics
+- Pingdom
+
+</div>
+
+<div>
+
+**Product Analytics:**
+- Mixpanel
+- Amplitude
+- PostHog (open source)
+- Google Analytics 4
+- Segment
+
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-12">
+
+## 💬 Let's Discuss
+- What monitoring challenges are you facing?
+- Which tools have you tried?
+- Regional monitoring experiences?
+- Implementation questions?
+
+</div>
+
+<!--
+This is where we open up for discussion. I'm curious about the specific monitoring challenges the Syrian developer community faces, especially around regional performance, cost considerations, and tool accessibility. Let's make this interactive and practical.
+-->
