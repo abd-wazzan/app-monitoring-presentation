@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apple‑Style Deck</title>
+  <meta name="description" content="A minimalist Apple-style, glassy presentation deck in pure HTML/CSS/JS" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%230A84FF'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <nav class="nav-dots" aria-label="Sections navigation">
+      <button class="dot is-active" data-target="#slide-1" aria-label="Go to Intro" data-testid="nav-dot-1"></button>
+      <button class="dot" data-target="#slide-2" aria-label="Go to Agenda" data-testid="nav-dot-2"></button>
+      <button class="dot" data-target="#slide-3" aria-label="Go to Why" data-testid="nav-dot-3"></button>
+      <button class="dot" data-target="#slide-4" aria-label="Go to Types" data-testid="nav-dot-4"></button>
+      <button class="dot" data-target="#slide-5" aria-label="Go to Synthetic" data-testid="nav-dot-5"></button>
+      <button class="dot" data-target="#slide-6" aria-label="Go to Features" data-testid="nav-dot-6"></button>
+      <button class="dot" data-target="#slide-7" aria-label="Go to Code" data-testid="nav-dot-7"></button>
+      <button class="dot" data-target="#slide-8" aria-label="Go to Demo" data-testid="nav-dot-8"></button>
+      <button class="dot" data-target="#slide-9" aria-label="Go to Analytics" data-testid="nav-dot-9"></button>
+      <button class="dot" data-target="#slide-10" aria-label="Go to Use Cases" data-testid="nav-dot-10"></button>
+      <button class="dot" data-target="#slide-11" aria-label="Go to Takeaways" data-testid="nav-dot-11"></button>
+      <button class="dot" data-target="#slide-12" aria-label="Go to Tools" data-testid="nav-dot-12"></button>
+      <button class="dot" data-target="#slide-13" aria-label="Go to Q&A" data-testid="nav-dot-13"></button>
+    </nav>
+
+    <main class="slides" tabindex="0">
+      <!-- Slide 1: Hero -->
+      <section id="slide-1" class="slide hero" aria-label="Intro">
+        <div class="container glass large-gap">
+          <div class="hero-badge">
+            <span style="margin-right: 0.5rem; font-size: 1rem;">🇸🇾</span>
+            Syrian Developers Event • October 2025
+          </div>
+          <h1 class="title">Application Monitoring</h1>
+          <h2 class="subtitle">Beyond Basic Health Checks</h2>
+          <p class="lede">Modern monitoring strategies that go far beyond simple uptime checks to help you build more reliable, observable systems.</p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#slide-2">Start</a>
+          </div>
+
+          <div class="presenter-info" style="margin-top: 2rem; text-align: center;">
+            <div style="color: var(--muted); font-size: 1.2rem;">
+              Presented by <span style="color: var(--ink); font-weight: 600;">Abdulrahman Wazzan</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-ornaments">
+          <div class="orb orb-a"></div>
+          <div class="orb orb-b"></div>
+          <div class="orb orb-c"></div>
+        </div>
+      </section>
+
+      <!-- Slide 2: Agenda -->
+      <section id="slide-2" class="slide features" aria-label="Agenda">
+        <div class="container glass">
+          <header class="section-head">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 2h10v2H7V2ZM3 6h18v14H3V6Zm4 3h4v2H7V9Zm0 4h10v2H7v-2Z"/></svg>
+            </div>
+            <h3 class="kicker">Agenda</h3>
+            <h2 class="section-title">What we’ll cover</h2>
+          </header>
+          <ul class="bullets lede">
+            <li>Why Application Monitoring</li>
+            <li>Types: Infrastructure, RUM, Synthetic</li>
+            <li>Synthetic Deep Dive + Code</li>
+            <li>🎬 Live Demo: Synthetic Monitoring</li>
+            <li>Product Analytics + Use Cases</li>
+            <li>Key Takeaways + Q&A</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Slide 3: Why modern monitoring -->
+      <section id="slide-3" class="slide features" aria-label="Why">
+        <div class="container glass">
+          <header class="section-head">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 5h-2v6h6v-2h-4Z"/></svg>
+            </div>
+            <h3 class="kicker">Why</h3>
+            <h2 class="section-title">Why Application Monitoring?</h2>
+          </header>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="color: var(--accent); font-size: 1.6rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M3 3h2v18H3zm4 10h2v8H7zm4-6h2v14h-2zm4 4h2v10h-2zm4-8h2v18h-2z"/>
+              </svg>
+              The Reality Check
+            </h3>
+            <ul class="bullets lede" style="line-height:1.7">
+              <li><strong>Users expect</strong> 99.9%+ uptime and sub-second response times</li>
+              <li><strong>Traditional monitoring</strong> only tells you <em>when</em> something breaks</li>
+              <li><strong>Modern monitoring</strong> tells you <em>why</em> and <em>where</em> it breaks</li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              The Cost of Downtime
+            </h3>
+            <ul class="bullets lede" style="line-height:1.7">
+              <li><strong>1 minute</strong> of downtime = Lost revenue, frustrated users</li>
+              <li><strong>5 minutes</strong> = Social media complaints, support tickets</li>
+              <li><strong>1 hour</strong> = Reputation damage, customer churn</li>
+            </ul>
+          </div>
+
+          <div style="text-align: center; font-size: 1.5rem; font-weight: 600; color: var(--accent); margin-top: 1.5rem;">
+            <strong>Bottom line:</strong> Traditional monitoring ≠ modern needs
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Types of Monitoring -->
+      <section id="slide-4" class="slide features" aria-label="Types of Monitoring">
+        <div class="container">
+          <header class="section-head">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 4v13l10 5 10-5V4l-10 5Z"/></svg>
+            </div>
+            <h3 class="kicker">Overview</h3>
+            <h2 class="section-title">Types of Monitoring: Understanding the landscape</h2>
+          </header>
+          <div class="cards" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                </svg>
+              </div>
+              <h3>Infrastructure</h3>
+              <p><strong>Servers, DBs, Networks</strong></p>
+              <ul style="font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; padding-left: 1rem;">
+                <li>CPU, Memory, Disk</li>
+                <li>Network latency</li>
+                <li>Database performance</li>
+                <li>Container metrics</li>
+              </ul>
+            </article>
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01.99L12 11l-1.99-2.01A2.5 2.5 0 0 0 8 8H5.46c-.8 0-1.54.37-2.01.99L1 12v10h2v-6h2.5l1.5 6h2l1.5-6H12l1.5 6h2l1.5-6H20z"/>
+                </svg>
+              </div>
+              <h3>Real User Monitoring</h3>
+              <p><strong>"What do users experience?"</strong></p>
+              <ul style="font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; padding-left: 1rem;">
+                <li>Actual user sessions</li>
+                <li>Real performance data</li>
+                <li>Geographic insights</li>
+                <li>Device-specific issues</li>
+              </ul>
+            </article>
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <h3>Synthetic Monitoring</h3>
+              <p><strong>"What could users experience?"</strong></p>
+              <ul style="font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; padding-left: 1rem;">
+                <li>Simulated user journeys</li>
+                <li>Proactive issue detection</li>
+                <li>Global testing</li>
+                <li>24/7 validation</li>
+              </ul>
+            </article>
+          </div>
+          <div style="text-align: center; margin-top: 2rem; font-size: 1.5rem; color: var(--accent); font-weight: 600;">
+            <strong>Today's focus:</strong> Going beyond infrastructure to user-centric monitoring
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 5: Synthetic Monitoring Deep Dive -->
+      <section id="slide-5" class="slide features" aria-label="Synthetic Deep Dive">
+        <div class="container glass">
+          <header class="section-head">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M11 2h2v20h-2zM2 11h20v2H2z"/></svg>
+            </div>
+            <h3 class="kicker">Deep Dive</h3>
+            <h2 class="section-title">What Is Synthetic Monitoring?</h2>
+          </header>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="color: var(--accent); font-size: 1.6rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              The Concept
+            </h3>
+            <p class="lede" style="margin-bottom: 1rem;"><strong>Automated scripts</strong> that simulate real user flows:</p>
+            <ul class="bullets lede" style="line-height:1.7">
+              <li>Login → Browse → Purchase</li>
+              <li>Search → Filter → View Details</li>
+              <li>API calls → Data processing</li>
+              <li>Mobile app interactions</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="color: var(--accent); font-size: 1.6rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              Key Benefits
+            </h3>
+            <ul class="bullets lede" style="line-height:1.7">
+              <li><strong>Proactive detection</strong> before users are impacted</li>
+              <li><strong>Global testing</strong> from multiple regions</li>
+              <li><strong>24/7 validation</strong> of critical user journeys</li>
+              <li><strong>Performance benchmarking</strong> across locations</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 6: Key Features of Synthetic Monitoring -->
+      <section id="slide-6" class="slide features" aria-label="Key Features">
+        <div class="container">
+          <header class="section-head">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3 class="kicker">Features</h3>
+            <h2 class="section-title">Key Features of Synthetic Monitoring</h2>
+          </header>
+          <div class="cards">
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+              </div>
+              <h3>Multi-Location Testing</h3>
+              <ul style="font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; padding-left: 1rem;">
+                <li>Test from <strong>multiple regions</strong> simultaneously</li>
+                <li>Catch <strong>geo-specific issues</strong> (CDN problems, regional outages)</li>
+                <li>Validate <strong>global performance</strong> consistency</li>
+              </ul>
+            </article>
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+                </svg>
+              </div>
+              <h3>Complex User Journeys</h3>
+              <ul style="font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; padding-left: 1rem;">
+                <li><strong>Multi-step workflows</strong> (signup → onboarding → purchase)</li>
+                <li><strong>API dependency chains</strong> (auth → data → processing)</li>
+                <li><strong>Cross-browser testing</strong> (Chrome, Safari, Firefox)</li>
+              </ul>
+            </article>
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 3h2v18H3zm4 10h2v8H7zm4-6h2v14h-2zm4 4h2v10h-2zm4-8h2v18h-2z"/>
+                </svg>
+              </div>
+              <h3>Advanced Analytics</h3>
+              <ul style="font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; padding-left: 1rem;">
+                <li><strong>Performance trends</strong> over time</li>
+                <li><strong>Failure pattern analysis</strong> (when, where, why)</li>
+                <li><strong>SLA compliance</strong> tracking</li>
+              </ul>
+            </article>
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H6.99c-2.76 0-5 2.24-5 5s2.24 5 5 5H11v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-2v1.9h2c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-2V17h2c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+                </svg>
+              </div>
+              <h3>Deep Integrations</h3>
+              <ul style="font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; padding-left: 1rem;">
+                <li><strong>CI/CD pipelines</strong> (block deployments on failures)</li>
+                <li><strong>Incident management</strong> (PagerDuty, Slack alerts)</li>
+                <li><strong>APM tools</strong> (correlate with backend metrics)</li>
+              </ul>
+            </article>
+          </div>
+          <div style="text-align: center; margin-top: 2rem; font-size: 1.4rem; color: var(--accent); font-weight: 600;">
+            <strong>Result:</strong> Catch issues before they impact users, anywhere in the world
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Code Example (Playwright) -->
+      <section id="slide-7" class="slide" aria-label="Code Example">
+        <div class="container glass">
+          <header class="section-head">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3 5h18v14H3zM5 7v10h14V7z"/></svg>
+            </div>
+            <h3 class="kicker">Example</h3>
+            <h2 class="section-title">Synthetic vs Basic Health Checks</h2>
+          </header>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+            <div>
+              <h3 style="color: #dc2626; margin-bottom: 1rem;">❌ Basic Health Checks</h3>
+<pre class="code" style="font-size: 0.8rem;"><code># Simple ping test
+curl -f https://api.example.com/health
+# Returns: 200 OK ✅
+
+# But what about...
+# - User authentication flow?
+# - Database connectivity?
+# - Third-party integrations?
+# - Regional performance?</code></pre>
+              <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem;"><strong>Problem:</strong> Server is up ≠ Application works</p>
+            </div>
+
+            <div>
+              <h3 style="color: #16a34a; margin-bottom: 1rem;">✅ Synthetic Monitoring</h3>
+<pre class="code" style="font-size: 0.8rem;"><code>// Real user journey test
+const fullUserFlow = async () => {
+  // 1. Test authentication
+  await login('user@example.com', 'password');
+
+  // 2. Test core functionality
+  await searchProducts('laptop');
+  await addToCart('macbook-pro');
+
+  // 3. Test payment flow
+  await proceedToCheckout();
+  await enterPaymentDetails();
+
+  // 4. Verify completion
+  await confirmOrder();
+  // All steps must pass ✅
+};</code></pre>
+              <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem;"><strong>Result:</strong> End-to-end validation of user experience</p>
+            </div>
+          </div>
+
+          <div style="text-align: center; font-size: 1.4rem; color: var(--accent); font-weight: 600;">
+            <strong>Synthetic monitoring catches issues that health checks miss</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Live Demo -->
+      <section id="slide-8" class="slide hero" aria-label="Demo">
+        <div class="container glass">
+          <header class="section-head" style="text-align: center;">
+            <div class="icon-wrap" style="margin: 0 auto;">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            </div>
+            <h3 class="kicker">Live Demo</h3>
+            <h2 class="section-title" style="font-size: 2.5rem;">Synthetic Monitoring in Action</h2>
+          </header>
+
+          <div style="text-align: center; margin: 2rem 0;">
+            <p class="lede" style="font-size: 1.4rem; margin-bottom: 2rem;">
+              Let's see how synthetic monitoring catches issues that traditional health checks miss
+            </p>
+
+            <!-- Video placeholder - replace with your actual video -->
+            <div style="background: var(--glass); border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 2px dashed var(--accent);">
+              <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; color: var(--accent); font-size: 1.2rem;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                <span style="font-weight: 600;">Demo Video: Global Synthetic Monitoring</span>
+              </div>
+              <p style="color: var(--muted); margin-top: 1rem; font-size: 1rem;">
+                • Setting up Playwright tests<br>
+                • Running from multiple regions<br>
+                • Catching real issues before users do
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem;">
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">5 regions</div>
+                <div style="color: var(--muted);">Global testing</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">24/7</div>
+                <div style="color: var(--muted);">Continuous monitoring</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">&lt;30s</div>
+                <div style="color: var(--muted);">Alert time</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 9: Product Analytics -->
+      <section id="slide-8" class="slide features" aria-label="Product Analytics">
+        <div class="container">
+          <header class="section-head">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3 3h2v18H3zm4 10h2v8H7zm4-6h2v14h-2zm4 4h2v10h-2zm4-8h2v18h-2z"/></svg>
+            </div>
+            <h3 class="kicker">Analytics</h3>
+            <h2 class="section-title">Introducing Product Analytics</h2>
+          </header>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+            <div>
+              <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M3 3h2v18H3zm4 10h2v8H7zm4-6h2v14h-2zm4 4h2v10h-2zm4-8h2v18h-2z"/>
+              </svg>
+              What is Product Analytics?
+            </h3>
+              <p class="lede" style="margin-bottom: 1rem;"><strong>Track user behavior</strong> to understand:</p>
+              <ul class="bullets" style="color: var(--muted);">
+                <li>Which features users actually use</li>
+                <li>Where users drop off in funnels</li>
+                <li>What keeps users engaged</li>
+                <li>How different user segments behave</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              Key Metrics
+            </h3>
+              <ul class="bullets" style="color: var(--muted);">
+                <li><strong>Events:</strong> Button clicks, page views, feature usage</li>
+                <li><strong>Funnels:</strong> Step-by-step user journey analysis</li>
+                <li><strong>Cohorts:</strong> User groups based on behavior/attributes</li>
+                <li><strong>Retention:</strong> How often users return</li>
+                <li><strong>Churn:</strong> When and why users leave</li>
+              </ul>
+            </div>
+          </div>
+
+<pre class="code" style="font-size: 0.85rem;"><code>// Example: Tracking user events
+mixpanel.track('Product Viewed', {
+  'Product Name': 'MacBook Pro',
+  'Category': 'Laptops',
+  'Price': 2499,
+  'User Type': 'Premium'
+});
+
+mixpanel.track('Add to Cart', {
+  'Product ID': 'mbp-16-512',
+  'Quantity': 1,
+  'Cart Value': 2499
+});
+
+mixpanel.track('Checkout Started', {
+  'Cart Items': 1,
+  'Total Value': 2499,
+  'Payment Method': 'Credit Card'
+});</code></pre>
+
+          <div style="text-align: center; margin-top: 1.5rem; font-size: 1.4rem; color: var(--accent); font-weight: 600;">
+            <strong>Result:</strong> Data-driven decisions instead of guesswork
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 10: Real Use Cases -->
+      <section id="slide-10" class="slide features" aria-label="Use Cases">
+        <div class="container">
+          <header class="section-head">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="kicker">Real World</h3>
+            <h2 class="section-title">Product Analytics in Action</h2>
+          </header>
+          <div class="cards">
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+              </div>
+              <h3>Funnel Analysis</h3>
+              <p><strong>Scenario:</strong> E-commerce checkout optimization</p>
+              <div style="font-family: monospace; font-size: 0.8rem; margin: 0.5rem 0; color: var(--muted);">
+                Homepage → Product → Cart → Checkout → Payment<br>
+                &nbsp;&nbsp;100%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;85%&nbsp;&nbsp;&nbsp;&nbsp;70%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;38%
+              </div>
+              <p style="font-size: 0.9rem; color: var(--muted);"><strong>Insight:</strong> 25% drop-off from Cart to Checkout<br><strong>Result:</strong> Improved conversion by 15%</p>
+            </article>
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01.99L12 11l-1.99-2.01A2.5 2.5 0 0 0 8 8H5.46c-.8 0-1.54.37-2.01.99L1 12v10h2v-6h2.5l1.5 6h2l1.5-6H12l1.5 6h2l1.5-6H20z"/>
+                </svg>
+              </div>
+              <h3>Cohort Analysis</h3>
+              <p><strong>Scenario:</strong> SaaS user retention</p>
+              <ul style="font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; padding-left: 1rem;">
+                <li><strong>Week 1:</strong> 100% active</li>
+                <li><strong>Week 2:</strong> 65% still active</li>
+                <li><strong>Week 4:</strong> 40% still active</li>
+              </ul>
+              <p style="font-size: 0.9rem; color: var(--muted);"><strong>Action:</strong> Improved onboarding flow<br><strong>Result:</strong> Week 4 retention increased to 60%</p>
+            </article>
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <h3>Feature Usage</h3>
+              <p><strong>Scenario:</strong> Mobile app optimization</p>
+              <ul style="font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; padding-left: 1rem;">
+                <li><strong>Search:</strong> Used by 95% of users</li>
+                <li><strong>Filters:</strong> Used by 30% of users</li>
+                <li><strong>Favorites:</strong> Used by 15% of users</li>
+              </ul>
+              <p style="font-size: 0.9rem; color: var(--muted);"><strong>Action:</strong> Prioritized search performance<br><strong>Result:</strong> 20% faster app experience</p>
+            </article>
+            <article class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+              </div>
+              <h3>Segmentation</h3>
+              <p><strong>Scenario:</strong> Global app performance</p>
+              <ul style="font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; padding-left: 1rem;">
+                <li><strong>US users:</strong> 2.1s avg load time</li>
+                <li><strong>EU users:</strong> 2.8s avg load time</li>
+                <li><strong>APAC users:</strong> 4.2s avg load time</li>
+              </ul>
+              <p style="font-size: 0.9rem; color: var(--muted);"><strong>Action:</strong> Added APAC CDN nodes<br><strong>Result:</strong> APAC load time reduced to 2.3s</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 11: Key Takeaways -->
+      <section id="slide-11" class="slide features" aria-label="Key Takeaways">
+        <div class="container glass">
+          <header class="section-head">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="kicker">Summary</h3>
+            <h2 class="section-title">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              Key Takeaways
+            </h2>
+          </header>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              Go Beyond Basic Monitoring
+            </h3>
+            <ul class="bullets lede" style="line-height:1.7">
+              <li><strong>Health checks</strong> tell you if servers are up</li>
+              <li><strong>Synthetic monitoring</strong> tells you if users can succeed</li>
+              <li><strong>Product analytics</strong> tells you if users actually do succeed</li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+              Think Global, Monitor Local
+            </h3>
+            <ul class="bullets lede" style="line-height:1.7">
+              <li>Test from your users' locations</li>
+              <li>Catch regional issues before impact</li>
+              <li>Validate performance across geographies</li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M3 3h2v18H3zm4 10h2v8H7zm4-6h2v14h-2zm4 4h2v10h-2zm4-8h2v18h-2z"/>
+              </svg>
+              Combine Proactive + Reactive
+            </h3>
+            <ul class="bullets lede" style="line-height:1.7">
+              <li><strong>Proactive:</strong> Synthetic monitoring catches issues early</li>
+              <li><strong>Reactive:</strong> User analytics shows real behavior patterns</li>
+              <li><strong>Together:</strong> Complete visibility into application health</li>
+            </ul>
+          </div>
+
+          <div style="text-align: center; font-size: 1.5rem; color: var(--accent); font-weight: 700; margin-top: 1.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+              <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+            </svg>
+            Modern Tools = Smarter Engineering<br>
+            <span style="font-size: 1rem; font-weight: 600;">Stop guessing, start measuring. Your users (and your sleep) will thank you.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 12: Tools & Ecosystem -->
+      <section id="slide-12" class="slide features" aria-label="Tools">
+        <div class="container">
+          <header class="section-head">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v10l10 5 10-5V7L12 2Zm0 2.18L20 8l-8 3.82L4 8l8-3.82Z"/></svg>
+            </div>
+            <h3 class="kicker">Stack</h3>
+            <h2 class="section-title">Tools & Resources</h2>
+          </header>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+            <div>
+              <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+              </svg>
+              Synthetic Monitoring:
+            </h3>
+              <div class="legend">
+                <span class="pill">Playwright (open source)</span>
+                <span class="pill">Puppeteer (Google)</span>
+                <span class="pill">DataDog Synthetics</span>
+                <span class="pill">New Relic Synthetics</span>
+                <span class="pill">Pingdom</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                <path d="M3 3h2v18H3zm4 10h2v8H7zm4-6h2v14h-2zm4 4h2v10h-2zm4-8h2v18h-2z"/>
+              </svg>
+              Product Analytics:
+            </h3>
+              <div class="legend">
+                <span class="pill">Mixpanel</span>
+                <span class="pill">Amplitude</span>
+                <span class="pill">PostHog (open source)</span>
+                <span class="pill">Google Analytics 4</span>
+                <span class="pill">Segment</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 2rem;">
+            <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </svg>
+            Resources & Contact
+          </h3>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+              <div style="text-align: left;">
+                <p style="margin: 0.5rem 0; color: var(--muted);">• Playwright Docs: <a href="https://playwright.dev" target="_blank" style="color: var(--accent);">playwright.dev</a></p>
+                <p style="margin: 0.5rem 0; color: var(--muted);">• PostHog (Open Source): <a href="https://posthog.com" target="_blank" style="color: var(--accent);">posthog.com</a></p>
+              </div>
+              <div style="text-align: left;">
+                <p style="margin: 0.5rem 0; color: var(--muted);">• LinkedIn: <a href="https://linkedin.com/in/abdulrahman-wazzan" target="_blank" style="color: var(--accent);">@abdulrahman-wazzan</a></p>
+                <p style="margin: 0.5rem 0; color: var(--muted);">• Syrian Developers Community</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 13: Questions & Discussion -->
+      <section id="slide-13" class="slide closing" aria-label="Q&A">
+        <div class="container">
+          <h2 class="section-title">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+          </svg>
+          Questions & Discussion
+        </h2>
+          <p class="lede">Let's dive deeper into modern monitoring</p>
+
+          <div style="margin: 2rem 0;">
+            <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+            </svg>
+            Let's Discuss
+          </h3>
+            <ul class="bullets lede" style="line-height:1.7; text-align: left; max-width: 600px; margin: 0 auto;">
+              <li>What monitoring challenges are you facing?</li>
+              <li>Which tools have you tried?</li>
+              <li>Regional monitoring experiences?</li>
+              <li>Implementation questions?</li>
+            </ul>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#slide-1">Restart</a>
+            <a class="btn ghost" href="https://linkedin.com/in/abdulrahman-wazzan" target="_blank">Connect</a>
+          </div>
+
+          <div style="margin-top: 2rem; color: var(--muted); font-size: 1rem;">
+            <p>
+              <span style="margin-right: 0.5rem; font-size: 1rem;">🇸🇾</span>
+              Syrian Developers Event • October 2025
+            </p>
+            <p>Thank you for your attention!</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
