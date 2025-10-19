@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Apple‑Style Deck</title>
+  <title>Monitoring Presentation</title>
   <meta name="description" content="A minimalist Apple-style, glassy presentation deck in pure HTML/CSS/JS" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%230A84FF'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
@@ -21,9 +21,11 @@
       <button class="dot" data-target="#slide-8" aria-label="Go to Demo" data-testid="nav-dot-8"></button>
       <button class="dot" data-target="#slide-9" aria-label="Go to Analytics" data-testid="nav-dot-9"></button>
       <button class="dot" data-target="#slide-10" aria-label="Go to Use Cases" data-testid="nav-dot-10"></button>
-      <button class="dot" data-target="#slide-11" aria-label="Go to Takeaways" data-testid="nav-dot-11"></button>
-      <button class="dot" data-target="#slide-12" aria-label="Go to Tools" data-testid="nav-dot-12"></button>
-      <button class="dot" data-target="#slide-13" aria-label="Go to Q&A" data-testid="nav-dot-13"></button>
+      <button class="dot" data-target="#slide-11" aria-label="Go to Analytics Demo" data-testid="nav-dot-11"></button>
+      <button class="dot" data-target="#slide-12" aria-label="Go to Takeaways" data-testid="nav-dot-12"></button>
+      <button class="dot" data-target="#slide-13" aria-label="Go to Tools" data-testid="nav-dot-13"></button>
+      <button class="dot" data-target="#slide-14" aria-label="Go to Q&A" data-testid="nav-dot-14"></button>
+      <button class="dot" data-target="#slide-15" aria-label="Go to Thank You" data-testid="nav-dot-15"></button>
     </nav>
 
     <main class="slides" tabindex="0">
@@ -31,16 +33,11 @@
       <section id="slide-1" class="slide hero" aria-label="Intro">
         <div class="container glass large-gap">
           <div class="hero-badge">
-            <span style="margin-right: 0.5rem; font-size: 1rem;">🇸🇾</span>
-            Syrian Developers Event • October 2025
+            Arab Developers Event • October 2025
           </div>
           <h1 class="title">Application Monitoring</h1>
           <h2 class="subtitle">Beyond Basic Health Checks</h2>
           <p class="lede">Modern monitoring strategies that go far beyond simple uptime checks to help you build more reliable, observable systems.</p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="#slide-2">Start</a>
-          </div>
 
           <div class="presenter-info" style="margin-top: 2rem; text-align: center;">
             <div style="color: var(--muted); font-size: 1.2rem;">
@@ -123,7 +120,7 @@
 
       <!-- Slide 4: Types of Monitoring -->
       <section id="slide-4" class="slide features" aria-label="Types of Monitoring">
-        <div class="container">
+        <div class="container glass">
           <header class="section-head">
             <div class="icon-wrap">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 4v13l10 5 10-5V4l-10 5Z"/></svg>
@@ -150,7 +147,7 @@
             <article class="card">
               <div class="card-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01.99L12 11l-1.99-2.01A2.5 2.5 0 0 0 8 8H5.46c-.8 0-1.54.37-2.01.99L1 12v10h2v-6h2.5l1.5 6h2l1.5-6H12l1.5 6h2l1.5-6H20z"/>
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                 </svg>
               </div>
               <h3>Real User Monitoring</h3>
@@ -195,42 +192,50 @@
             <h2 class="section-title">What Is Synthetic Monitoring?</h2>
           </header>
 
-          <div style="margin-bottom: 2rem;">
-            <h3 style="color: var(--accent); font-size: 1.6rem; margin-bottom: 1rem;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              The Concept
-            </h3>
-            <p class="lede" style="margin-bottom: 1rem;"><strong>Automated scripts</strong> that simulate real user flows:</p>
-            <ul class="bullets lede" style="line-height:1.7">
-              <li>Login → Browse → Purchase</li>
-              <li>Search → Filter → View Details</li>
-              <li>API calls → Data processing</li>
-              <li>Mobile app interactions</li>
-            </ul>
-          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+            <div>
+              <div style="margin-bottom: 2rem;">
+                <h3 style="color: var(--accent); font-size: 1.6rem; margin-bottom: 1rem;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  The Concept
+                </h3>
+                <p class="lede" style="margin-bottom: 1rem;"><strong>Automated scripts</strong> that simulate real user flows:</p>
+                <ul class="bullets lede" style="line-height:1.7">
+                  <li>Login → Browse → Purchase</li>
+                  <li>Search → Filter → View Details</li>
+                  <li>API calls → Data processing</li>
+                  <li>Mobile app interactions</li>
+                </ul>
+              </div>
 
-          <div>
-            <h3 style="color: var(--accent); font-size: 1.6rem; margin-bottom: 1rem;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              Key Benefits
-            </h3>
-            <ul class="bullets lede" style="line-height:1.7">
-              <li><strong>Proactive detection</strong> before users are impacted</li>
-              <li><strong>Global testing</strong> from multiple regions</li>
-              <li><strong>24/7 validation</strong> of critical user journeys</li>
-              <li><strong>Performance benchmarking</strong> across locations</li>
-            </ul>
+              <div>
+                <h3 style="color: var(--accent); font-size: 1.6rem; margin-bottom: 1rem;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  Key Benefits
+                </h3>
+                <ul class="bullets lede" style="line-height:1.7">
+                  <li><strong>Proactive detection</strong> before users are impacted</li>
+                  <li><strong>Global testing</strong> from multiple regions</li>
+                  <li><strong>24/7 validation</strong> of critical user journeys</li>
+                  <li><strong>Performance benchmarking</strong> across locations</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="text-align: center;">
+              <img src="assets/website-monitoring.webp" alt="Synthetic Monitoring Visualization" style="max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);" />
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Slide 6: Key Features of Synthetic Monitoring -->
       <section id="slide-6" class="slide features" aria-label="Key Features">
-        <div class="container">
+        <div class="container glass">
           <header class="section-head">
             <div class="icon-wrap">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -355,56 +360,14 @@ const fullUserFlow = async () => {
 
       <!-- Slide 8: Live Demo -->
       <section id="slide-8" class="slide hero" aria-label="Demo">
-        <div class="container glass">
-          <header class="section-head" style="text-align: center;">
-            <div class="icon-wrap" style="margin: 0 auto;">
-              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-            </div>
-            <h3 class="kicker">Live Demo</h3>
-            <h2 class="section-title" style="font-size: 2.5rem;">Synthetic Monitoring in Action</h2>
-          </header>
-
-          <div style="text-align: center; margin: 2rem 0;">
-            <p class="lede" style="font-size: 1.4rem; margin-bottom: 2rem;">
-              Let's see how synthetic monitoring catches issues that traditional health checks miss
-            </p>
-
-            <!-- Video placeholder - replace with your actual video -->
-            <div style="background: var(--glass); border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 2px dashed var(--accent);">
-              <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; color: var(--accent); font-size: 1.2rem;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-                <span style="font-weight: 600;">Demo Video: Global Synthetic Monitoring</span>
-              </div>
-              <p style="color: var(--muted); margin-top: 1rem; font-size: 1rem;">
-                • Setting up Playwright tests<br>
-                • Running from multiple regions<br>
-                • Catching real issues before users do
-              </p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem;">
-              <div style="text-align: center;">
-                <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">5 regions</div>
-                <div style="color: var(--muted);">Global testing</div>
-              </div>
-              <div style="text-align: center;">
-                <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">24/7</div>
-                <div style="color: var(--muted);">Continuous monitoring</div>
-              </div>
-              <div style="text-align: center;">
-                <div style="font-size: 2rem; color: var(--accent); font-weight: 700;">&lt;30s</div>
-                <div style="color: var(--muted);">Alert time</div>
-              </div>
-            </div>
-          </div>
+        <div class="container glass large-gap">
+          <h1 class="title" style="font-size: 4rem; text-align: center;">Demo</h1>
         </div>
       </section>
 
       <!-- Slide 9: Product Analytics -->
       <section id="slide-8" class="slide features" aria-label="Product Analytics">
-        <div class="container">
+        <div class="container glass">
           <header class="section-head">
             <div class="icon-wrap">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3 3h2v18H3zm4 10h2v8H7zm4-6h2v14h-2zm4 4h2v10h-2zm4-8h2v18h-2z"/></svg>
@@ -475,7 +438,7 @@ mixpanel.track('Checkout Started', {
 
       <!-- Slide 10: Real Use Cases -->
       <section id="slide-10" class="slide features" aria-label="Use Cases">
-        <div class="container">
+        <div class="container glass">
           <header class="section-head">
             <div class="icon-wrap">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -547,8 +510,15 @@ mixpanel.track('Checkout Started', {
         </div>
       </section>
 
-      <!-- Slide 11: Key Takeaways -->
-      <section id="slide-11" class="slide features" aria-label="Key Takeaways">
+      <!-- Slide 11: Product Analytics Demo -->
+      <section id="slide-11" class="slide hero" aria-label="Analytics Demo">
+        <div class="container glass large-gap">
+          <h1 class="title" style="font-size: 4rem; text-align: center;">Demo</h1>
+        </div>
+      </section>
+
+      <!-- Slide 12: Key Takeaways -->
+      <section id="slide-12" class="slide features" aria-label="Key Takeaways">
         <div class="container glass">
           <header class="section-head">
             <div class="icon-wrap">
@@ -615,9 +585,9 @@ mixpanel.track('Checkout Started', {
         </div>
       </section>
 
-      <!-- Slide 12: Tools & Ecosystem -->
-      <section id="slide-12" class="slide features" aria-label="Tools">
-        <div class="container">
+      <!-- Slide 13: Tools & Ecosystem -->
+      <section id="slide-13" class="slide features" aria-label="Tools">
+        <div class="container glass">
           <header class="section-head">
             <div class="icon-wrap">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v10l10 5 10-5V7L12 2Zm0 2.18L20 8l-8 3.82L4 8l8-3.82Z"/></svg>
@@ -626,7 +596,7 @@ mixpanel.track('Checkout Started', {
             <h2 class="section-title">Tools & Resources</h2>
           </header>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
             <div>
               <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
@@ -637,6 +607,7 @@ mixpanel.track('Checkout Started', {
               <div class="legend">
                 <span class="pill">Playwright (open source)</span>
                 <span class="pill">Puppeteer (Google)</span>
+                <span class="pill">Dotcom-Monitor</span>
                 <span class="pill">DataDog Synthetics</span>
                 <span class="pill">New Relic Synthetics</span>
                 <span class="pill">Pingdom</span>
@@ -659,31 +630,12 @@ mixpanel.track('Checkout Started', {
               </div>
             </div>
           </div>
-
-          <div style="text-align: center; margin-top: 2rem;">
-            <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-            </svg>
-            Resources & Contact
-          </h3>
-            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-              <div style="text-align: left;">
-                <p style="margin: 0.5rem 0; color: var(--muted);">• Playwright Docs: <a href="https://playwright.dev" target="_blank" style="color: var(--accent);">playwright.dev</a></p>
-                <p style="margin: 0.5rem 0; color: var(--muted);">• PostHog (Open Source): <a href="https://posthog.com" target="_blank" style="color: var(--accent);">posthog.com</a></p>
-              </div>
-              <div style="text-align: left;">
-                <p style="margin: 0.5rem 0; color: var(--muted);">• LinkedIn: <a href="https://linkedin.com/in/abdulrahman-wazzan" target="_blank" style="color: var(--accent);">@abdulrahman-wazzan</a></p>
-                <p style="margin: 0.5rem 0; color: var(--muted);">• Syrian Developers Community</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      <!-- Slide 13: Questions & Discussion -->
-      <section id="slide-13" class="slide closing" aria-label="Q&A">
-        <div class="container">
+      <!-- Slide 14: Questions & Discussion -->
+      <section id="slide-14" class="slide closing" aria-label="Q&A">
+        <div class="container glass large-gap">
           <h2 class="section-title">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle;">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
@@ -706,18 +658,34 @@ mixpanel.track('Checkout Started', {
               <li>Implementation questions?</li>
             </ul>
           </div>
+        </div>
+      </section>
 
-          <div class="hero-actions">
-            <a class="btn primary" href="#slide-1">Restart</a>
-            <a class="btn ghost" href="https://linkedin.com/in/abdulrahman-wazzan" target="_blank">Connect</a>
+      <!-- Slide 15: Thank You -->
+      <section id="slide-15" class="slide hero" aria-label="Thank You">
+        <div class="container glass large-gap">
+          <h1 class="title" style="font-size: 3.5rem; text-align: center; margin-bottom: 2rem;">Thank You!</h1>
+
+          <div style="text-align: center; margin: 2rem 0;">
+            <p style="font-size: 1.3rem; color: var(--muted); margin-bottom: 1rem;">
+              Arab Developers Event • October 2025
+            </p>
+
+            <div style="margin-top: 2rem;">
+              <p style="font-size: 1.2rem; color: var(--text); margin-bottom: 1rem;">
+                Let's connect!
+              </p>
+              <p style="font-size: 1.4rem;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem; vertical-align: middle; color: var(--accent);">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+                <a href="https://linkedin.com/in/abdulrahman-wazzan" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">@abdulrahman-wazzan</a>
+              </p>
+            </div>
           </div>
 
-          <div style="margin-top: 2rem; color: var(--muted); font-size: 1rem;">
-            <p>
-              <span style="margin-right: 0.5rem; font-size: 1rem;">🇸🇾</span>
-              Syrian Developers Event • October 2025
-            </p>
-            <p>Thank you for your attention!</p>
+          <div class="hero-actions" style="margin-top: 3rem;">
+            <a class="btn ghost" href="#slide-1" style="opacity: 0.15; font-size: 0.75rem;">Restart</a>
           </div>
         </div>
       </section>
